@@ -56,7 +56,7 @@ class Hpss:
 			
 
 def main():
-	arg_parser = argparse.ArgumentParser(description='AnomalyMixer')
+	arg_parser = argparse.ArgumentParser(description='AnomalyHpss')
 	arg_parser.add_argument('input_file', type=str)
 	arg_parser.add_argument('-a', '--anm_dir', type=str, default="./in/anm/")
 	arg_parser.add_argument('-o', '--out_dir', type=str, default="./in/sample/")
@@ -64,6 +64,6 @@ def main():
 	arg_parser.parse_args()
 	args = arg_parser.parse_args()
 
-	mixer = Hpss(args.input_file, anm=args.anm_dir, out=args.out_dir, sr=args.sample_rate)
+	hpss = Hpss(args.input_file, anm=args.anm_dir, out=args.out_dir, sr=args.sample_rate)
 	hpss()
 	
